@@ -5,6 +5,7 @@ import { buildRocks } from './rocks.js';
 import { buildDust } from './dust.js';
 import { loadRover, RoverDrive } from './rover.js';
 import { Tracks } from './tracks.js';
+import { initMissionControl } from './mission/index.js';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
@@ -133,9 +134,12 @@ const readInput = () => ({
 });
 const hud = document.createElement('div');
 hud.id = 'hud';
-hud.textContent = 'W / S avanzar · A / D girar';
+hud.textContent = 'W / S avanzar · A / D girar · T control de misión';
 if (CHECK) hud.style.display = 'none';
 document.body.appendChild(hud);
+
+// ---------- control de misión (datos reales de Percy; la tecla T lo oculta) ----------
+initMissionControl();
 
 // ---------- rover ----------
 let rover = null;

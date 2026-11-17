@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "check": "node scripts/check.mjs"
+    "check": "node scripts/check.mjs",
+    "data": "node scripts/prepare-mission-data.mjs"
   },
   "dependencies": {
     "three": "^0.187.0",
